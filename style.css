@@ -1,52 +1,94 @@
-ul{
-	list-style: none;
-}
 
-a{
-	text-decoration: none;
-}
 
-.navbar{
-	border: black solid 2px;
-	border-radius: 10px;
+/*Navigatdiooni riba*/
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-title{
-	padding: 10px;
+	font-size: 24px;
+  font-weight: bold;
+}
 
-	background: white;
-	color: black;
+.menuBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
 
-	border: black solid 2px;
-	border-radius: 10px;
+  padding: 0px;
+  width: 30px;
+  height: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuBtn span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.menuBtn span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.menuBtn.active span:nth-child(1){
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menuBtn.active span:nth-child(2){
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.menuBtn.active span:nth-child(3){
+	opacity: 0;
+}
+
+.menu {
+  background-color: #444;
+  display: none;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-bottom: 1px solid #555;
+  transition: background-color 0.2s;
+}
+
+.menu a:hover {
+  background-color: #555;
 }
 
 
-.navbar{
+/*Lehe sisu*/
+
+.content {
 	display: flex;
-	align-items: center;
+	text-align: column;
 	justify-content: space-between;
+	flex-direction: column;
 
-	padding: 20px;
+	margin-top: 40px;
+	padding-left: 10px;
 
-	background: red;
-
-
+	background-color: #333;
+	color: white;
 }
 
-.navbar .menu{
-	display: flex;
-	gap: 10px;
-}
-
-.navbar .menu .nav-link{
-	padding: 10px;
-
-	border: black solid 2px;
-	border-radius: 10px;
-
-	background: white;
-	color: black;
-
-
-}
