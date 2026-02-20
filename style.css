@@ -1,0 +1,52 @@
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.navbar{
+	border: black solid 2px;
+	border-radius: 10px;
+}
+
+.nav-title{
+	padding: 10px;
+
+	background: white;
+	color: black;
+
+	border: black solid 2px;
+	border-radius: 10px;
+}
+
+
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 20px;
+
+	background: red;
+
+
+}
+
+.navbar .menu{
+	display: flex;
+	gap: 10px;
+}
+
+.navbar .menu .nav-link{
+	padding: 10px;
+
+	border: black solid 2px;
+	border-radius: 10px;
+
+	background: white;
+	color: black;
+
+
+}
