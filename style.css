@@ -1,4 +1,6 @@
-
+html {
+  scroll-behavior: smooth;
+}
 
 /*Navigatdiooni riba*/
 .navbar {
@@ -90,5 +92,9 @@
 
 	background-color: #333;
 	color: white;
+}
+
+section{
+  margin-bottom: 500px;
 }
 
