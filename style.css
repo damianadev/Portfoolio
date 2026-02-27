@@ -121,7 +121,11 @@ body{
 	color: white;
 }
 
-section {
+section{
+  height: 50vh;
+}
+
+#projects{
   height: 150vh;
 }
 

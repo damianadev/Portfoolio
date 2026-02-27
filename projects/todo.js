@@ -1,7 +1,7 @@
 const todoInput = document.querySelector('#todoInput');
 const saveBtn = document.querySelector('#saveBtn');
 const todoList = document.querySelector('#todoList');
-const username = prompt("Enter username..")
+const username = prompt("Enter your username..")
 const currentUser = document.querySelector('#currentUser').textContent = username
 
 const DB_URL = "https://tinkr.tech/sdb/todo_damian"; 
@@ -12,15 +12,24 @@ async function getTodo() {
   const response = await fetch(DB_URL);
   const elements = await response.json();
 
+  const userTodos = elements.filter(todo => todo.user === username);
+
   todoList.innerHTML = '';
 
-  elements
-  .filter(todo => todo.user === username)
-  .forEach(todo => {
+  if (userTodos.length === 0) {
+  const emptyMessage = document.createElement('p');
+  emptyMessage.textContent = "No tasks yet...";
+  emptyMessage.className = "emptyMessage";
+  todoList.appendChild(emptyMessage);
+  return;
+}
+
+  userTodos.forEach(todo => {
     const todoDiv = document.createElement('div');
     todoDiv.className = 'todoDiv';
 
-    const textSpan = document.createElement('span'); 
+    const textSpan = document.createElement('span');
+    textSpan.className = 'textDiv' 
     textSpan.textContent = todo.text;
 
     const actionsDiv = document.createElement('div');
@@ -85,5 +94,12 @@ async function saveTodo() {
 }
 
 saveBtn.addEventListener('click', saveTodo);
+
+todoInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    saveTodo();
+  }
+});
 
 getTodo();

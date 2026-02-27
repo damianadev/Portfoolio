@@ -1,8 +1,9 @@
 
 
 main{
-  height: 80% ;
-  width: 80%;
+  height: 100vh ;
+  width: 90%;
+  max-width: 600px;
   margin: 0 auto;
 
   display: flex;
@@ -14,14 +15,13 @@ main{
 
 
 #todoList{
+  width: 100%;
   height: 60vh;
-  width: 60vh;
-
 
   border: 1px solid black;
 
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .todoDiv{
@@ -32,6 +32,15 @@ main{
   border-bottom: 1px solid black;
 
   padding: 10px;
+}
+
+.textDiv{
+  flex: 1;
+  min-width: 0;
+  margin-right: 10px;
+
+  word-break: break-word;
+  overflow-wrap: anywhere; 
 }
 
 .doneDiv{
@@ -47,6 +56,7 @@ main{
 
 .deleteBtn {
   height: 25px;
+  padding: 0 10px;
 
   background: red;
   color: white;
@@ -55,25 +65,33 @@ main{
 
 }
 
-
 .input-area{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #todoInput{
   margin-top:10px ;
   height: 30px;
-  width: 59vh;
+  width: 100%;
 
 }
 
 #saveBtn{
   height: 35px;
+  width: 100%;
   margin-top: 5px;
 
   background: green;
   color: white;
   border: none;
 
+}
+
+.emptyMessage{
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+  font-style: italic;
 }
