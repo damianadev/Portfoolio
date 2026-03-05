@@ -3,10 +3,10 @@ html {
 }
 
 html, body {
-  height: 100%;          /* body и html занимают весь экран */
-  margin: 0;             /* убираем отступы по умолчанию */
+  height: 100%;
+  margin: 0;             
   display: flex;
-  flex-direction: column; /* вертикально: контент сверху, футер снизу */
+  flex-direction: column; 
 }
 
 /*Navigatdiooni riba*/
@@ -84,7 +84,7 @@ html, body {
   text-align: center;
 
   position: fixed;
-  top: 13%;
+  top: 14%;
   width: 20%;
   z-index: 999;
   transition: opacity 0,5s ease;
